@@ -1,14 +1,5 @@
 # Numerous always-ignore extensions
-*.diff
-*.err
-*.orig
-*.log
-*.rej
-*.swo
-*.swp
-*.zip
-*.vi
-*~
+
 
 # OS folders
 .DS_Store
@@ -21,7 +12,6 @@ Thumbs.db
 .CVS
 .idea
 
-node_modules
 dist
 .tmp
 app/bower_components
