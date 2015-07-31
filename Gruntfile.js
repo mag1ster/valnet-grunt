@@ -14,29 +14,17 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     dirs: {
-      app: '../lead/public'
+      app: '../thetalko/'
     },
     watch: {
       less: {
-        files: ['<%= dirs.app %>/css/**/*.less'],
+        files: ['<%= dirs.app %>wp-content/themes/thetalko/css/*.less'],
         tasks: ['less']
       },
       gruntfile: {
         files: ['Gruntfile.js']
       }
-    },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: [
-        'Gruntfile.js',
-        '<%= dirs.app %>/scripts/{,*/}*.js',
-        '!<%= dirs.app %>/scripts/vendor/*',
-        'test/spec/{,*/}*.js'
-      ]
-    },
+    }
     less: {
       options: {
         sourceMap: true,
@@ -57,9 +45,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= dirs.app %>/css',
-          src: '<%= dirs.app %>/*.css',
-          dest: '<%= dirs.app %>/styles/'
+          cwd: '<%= dirs.app %>wp-content/themes/thetalko/css/',
+          src: '<%= dirs.app %>wp-content/themes/thetalko/css/*.css',
+          dest: '<%= dirs.app %>wp-content/themes/thetalko/css/'
         }]
       }
     },
@@ -141,8 +129,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
-    'test',
-    'build'
+    'less'
   ]);
 };
