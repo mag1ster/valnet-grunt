@@ -5,13 +5,3 @@
 .DS_Store
 ._*
 Thumbs.db
-
-# Folders to ignore
-.hg
-.svn
-.CVS
-.idea
-
-dist
-.tmp
-app/bower_components
